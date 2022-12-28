@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    body{
+        background-color: #f6f2e9;
+    }
+   </style>
+</head>
+<body>
+<div id="container">
+    <p>Allows users to import a file that will generate a contribution heat map and allow adjustments to be made.</p>
+    <span>Current file must be in JSON format with "timestamp": value </span>
+    <input id="file-input" type="file">
+
+    <div id="playground">
+        <div id="legend-playground">
+            <div class="controls">Horizontal</div>
+                <button class="controls-btn" value="left">left</button>
+                <button class="controls-btn" value="center">center</button>
+                <button class="controls-btn" value="right">right</button>
+            <div class="controls">Vertical</div>
+            <button class="controls-btn" value="left">left</button>
+            <button class="controls-btn" value="center">center</button>
+            <button class="controls-btn" value="right">right</button>
+            <div class="controls">Orientation</div>
+            <button class="controls-btn" value="horizontal">horizontal</button>
+            <button class="controls-btn" value="vertical">vertical</button>
+           
+            <div class="controls">Margin</div>
+            <input type="number" step="3" min="0" max="100" value="0">
+            <input type="number" step="3" min="0" max="100" value="0">
+            <input type="number" step="3" min="0" max="100" value="0">
+            <input type="number" step="3" min="0" max="100" value="0">
+
+            <div class="controls">Domain</div>
+            <input type="number" step="3" min="0" max="100" value="0">
+            <input type="number" step="3" min="0" max="100" value="0">
+           
+            <div class="controls">Domain Steps</div>
+            <input type="range" id="legend-range" name="range" min="0" max="100">
+            <div class="controls">Color Range</div>
+            <select id = "myList" onchange = "favTutorial()" >  
+                <option> ---Choose tutorial--- </option>  
+                <option> w3schools </option>  
+                <option> Javatpoint </option>  
+                <option> tutorialspoint </option>  
+                <option> geeksforgeeks </option>  
+                </select>  
+                <select id = "myList" onchange = "favTutorial()" >  
+                    <option> ---Choose tutorial--- </option>  
+                    <option> w3schools </option>  
+                    <option> Javatpoint </option>  
+                    <option> tutorialspoint </option>  
+                    <option> geeksforgeeks </option>  
+                    </select>  
+            <div class="controls">Cell Size</div>
+            <div class="controls">Cell Padding</div>
+            <div class="controls">Item Name</div>
+            <div class="controls">Visibility</div>
+        </div>
+        <div id="domain-playground"></div>
+        <div id="orientation playground"></div>
+       
+        <div class="controls"></div>
+        <div class="controls"></div>
+        <div class="controls"></div>
+        <div class="controls"></div>
+        <div class="controls"></div>
+        <div class="controls"></div>
+        <div class="controls"></div>
+        <div class="controls"></div>
+        <div class="controls"></div>
+        <div class="controls"></div>
+        <div class="controls"></div>
+    </div>
+</div>
+  <div id="example-b-PreviousDomain-selector"></div>
+     <div id="example-b"></div>  <div id="example-b-NextDomain-selector"></div>
+      <div id="example-a"></div> <div id="example-a-PreviousDomain-selector"></div>
+      <div id="example-a-NextDomain-selector"></div>
+      <div id="cal-heatmap"></div>
+      <div id="myCal"></div>
+
+
+
+      <!-- <script src="mood-calHeatMap\node_modules\d3\d3.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" ></script>
+    <link rel="stylesheet" href="node_modules\cal-heatmap\cal-heatmap.css" />
+    <script type="text/javascript" src="node_modules\cal-heatmap\cal-heatmap.min.js"></script>
+    <script type="text/javascript"> 
+
+// function makeCal(input){
+var cal = new CalHeatMap();
+// var inputFile = input+"";
+cal.init({
+	itemSelector: "#myCal",
+	// itemSelector: "#example",
+    domain: "month",
+	subDomain: "x_day",
+	data: "moodData-2022.json",
+	start: new Date(2022, 0),
+	cellSize: 10,
+    cellPadding: 0,
+    // cellRadius: 5,
+    domainGutter: 10,
+	range: 12,
+	previousSelector: "#example-b-PreviousDomain-selector",
+	nextSelector: "#example-b-NextDomain-selector",
+    label: {
+		position: "left",
+		width: 36,
+		rotate: "left"
+	},
+    weekStartOnMonday: false,
+	legend: [1.5, 2.5, 3.5, 4.5],
+    legendCellSize: 30,
+    legendMargin: [20, 10, 10, 20],
+    legendOrientation: "vertical",
+    // legendColors: ["#efefef", "steelblue"]
+    legendColors: ["#ffbd59", "#5c77a5"]
+    // itemName: ["cat"]
+    // first line of data is incorrect,, thus causing all the data to shift back one day
+});
+// }
+    </script>
+</body>
+</html>
