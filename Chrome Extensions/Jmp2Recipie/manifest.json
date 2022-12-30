@@ -7,14 +7,11 @@
       "128": "/icons/saute.png"
     
     },
-    "action":{
-      "default_popup": "popup.html",
-      "default_icon": {
-    
-          "128": "/icons/saute.png"
-        
-        
-      }
-    }
+   
+    "content_scripts": [{
+      "css": ["style.css"],
+      "js": ["script.js"],
+      "matches": ["https://www.youtube.com/*","https://www.yummly.com/*", "https://altonbrown.com/recipes/scallion-pancakes/"]
+    }]
   
 }
