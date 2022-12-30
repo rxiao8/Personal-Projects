@@ -9,6 +9,7 @@
 var links = document.querySelectorAll("a");
 var found = false;
 links.forEach(function(e){  
+    
     if(e.textContent.replace(/\s+/g, '').toLowerCase() == "printrecipe" || e.textContent.replace(/\s+/g, '').toLowerCase() == "print" ){
         // window.onload = function(){ window.location = 'https://www.youtube.com' };
         e.setAttribute("target", "_blank");
