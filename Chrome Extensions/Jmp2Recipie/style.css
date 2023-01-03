@@ -16,3 +16,7 @@
     -webkit-filter: invert(100%);
     filter: invert(100%);
   } */
+
+body{
+  background-color: pink;
+}

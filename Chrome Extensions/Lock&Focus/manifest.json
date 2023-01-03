@@ -1,0 +1,22 @@
+{
+    "name": "Lock & Focus",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Minimizing the distractions",
+
+
+    "icons": {
+        "128": "chef.png"
+      },
+
+      
+      "permissions": [
+        "activeTab",
+        "contextMenus",
+        "scripting"
+      ],
+    
+      "background": {
+        "service_worker": "background.js"
+      }
+}

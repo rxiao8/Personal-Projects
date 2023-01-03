@@ -6,16 +6,22 @@
 //   images[i].src = 'http://placekitten.com/' + images[i].width + '/' + images[i].height;
 // }
 
-var links = document.querySelectorAll("a");
-var found = false;
-links.forEach(function(e){  
+// var links = document.querySelectorAll("a");
+// var found = false;
+// links.forEach(function(e){  
     
-    if(e.textContent.replace(/\s+/g, '').toLowerCase() == "printrecipe" || e.textContent.replace(/\s+/g, '').toLowerCase() == "print" ){
-        // window.onload = function(){ window.location = 'https://www.youtube.com' };
-        e.setAttribute("target", "_blank");
-        e.click();
-        console.log("found print");
-        return;
-    }
+//     if(e.textContent.replace(/\s+/g, '').toLowerCase() == "printrecipe" || e.textContent.replace(/\s+/g, '').toLowerCase() == "print" ){
+//         // window.onload = function(){ window.location = 'https://www.youtube.com' };
+//         e.setAttribute("target", "_blank");
+//         e.click();
+//         console.log("found print");
+//         return;
+//     }
    
-})
+// })
+
+var xpath = "//a[text()='Jump to Recipe']";
+var matchingElementSet = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null); 
+while(element = result.iterateNext()) {
+    console.log("found");
+} 
